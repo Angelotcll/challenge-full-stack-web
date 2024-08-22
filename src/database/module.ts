@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Student } from 'src/students/entity';
 
 @Module({
   imports: [
@@ -11,10 +12,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: '1234',
       database: 'edtech',
       autoLoadEntities: true,
-      synchronize: true,
-      logging: true
+      synchronize: true
     }),
-    TypeOrmModule.forFeature([])
+    TypeOrmModule.forFeature([Student])
   ],
   exports: [TypeOrmModule]
 })
