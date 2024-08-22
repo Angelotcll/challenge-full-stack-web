@@ -1,127 +1,85 @@
-+A Educação - Full Stack Web Developer
-===================
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+</p>
 
-[![N|Solid](https://maisaedu.com.br/hubfs/site-grupo-a/logo-mais-a-educacao.svg)](https://maisaedu.com.br/) 
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-O objetivo deste desafio é avaliar as competências técnicas dos candidatos a desenvolvedor Full Stack Web na Maior Plataforma de Educação do Brasil.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-Será solicitado o desenvolvimento de uma Aplicação que realize a Matrícula do Aluno na Turma de Programação Web da instituição Edtech. Regras e requisitos técnicos estão detalhadas neste documento.
+## Description
 
-# Especificações Técnicas
-- **Front-end:**
-  - Framework JS: [Vue.js](https://vuejs.org/)
-  - Framework de UI: [Vuetify](https://vuetifyjs.com/)
-- **API:** NodeJS
-- **Banco de Dados:** Postgress ou MySQL
-- **Idioma de escrita do código:** Inglês
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-# Requisitos
-## Contextualização
-Considere que uma Instituição de Ensino Superior precisa de uma solução para cadastrar e gerenciar matrículas de alunos em turmas online. Para realizar a matrícula, é necessário que o cadastro do aluno tenha sido realizado.
+## Project setup
 
-O desafio consiste em criar uma aplicação para o cadastro de alunos conforme os critérios de aceitação.
+```bash
+$ npm install
+```
 
-## Mockups de interface
-A seguir, são apresentados alguns mockups de interface como um guia para a criação do front-end. Fique à vontade para usar sua criatividade na criação do front-end.
+## Compile and run the project
 
-* Listagem de Alunos
-![Listagem de Alunos](/mockups/studants_list.png)
+```bash
+# development
+$ npm run start
 
-* Criar/Editar Aluno
-![Listagem de Alunos](/mockups/studants_save.png)
+# watch mode
+$ npm run start:dev
 
-## Histórias do Usuário
-- **Sendo** um usuário administrativo da Instituição
-- **Quero** gerenciar cadastros de alunos
-- **Para** que eu possa realizar a matrícula do aluno
+# production mode
+$ npm run start:prod
+```
 
-### Critérios de aceite: 
+## Run tests
 
-#### Cenário: Cadastrar novo aluno
-- **Dado** que estou na tela de Consulta de Alunos
-- **Quando** clico em Cadastrar Aluno
-- **Então** abre a tela de Cadastro do Aluno
-- **E** exibe os campos obrigatórios vazios
-####
-- **Dado** que inseri dados válidos nos campos
-- **Quando** clico em Salvar
-- **Então** cria o novo aluno na base
-- **E** retorna mensagem de sucesso
-####
-- **Dado** que inseri dados válidos nos campos
-- **Quando** clico em Cancelar
-- **Então** retorna para tela Consulta de Alunos
-- **E** não persiste a gravação dos dados no banco 
+```bash
+# unit tests
+$ npm run test
 
-#### Cenário: Listar alunos cadastrados 
-- **Dado** que estou no Módulo Acadêmico
-- **Quando** clico no menu Alunos
-- **Então** abre a tela de Consulta de Alunos 
-- **E** exibe opção Cadastrar Aluno ao topo
-- **E** lista dados dos alunos cadastrados
-- **E** exibe opção Editar por aluno
-- **E** exibe opção Excluir por aluno
+# e2e tests
+$ npm run test:e2e
 
-#### Cenário: Editar cadastro de aluno
-- **Dado** que estou na listagem de alunos
-- **Quando** clico em Editar aluno
-- **Então** abre a tela de Cadastro do Aluno 
-- **E** exibe os campos do cadastro preenchidos
-- **E** habilita alteração dos campos editáveis
-####
-- **Dado** que estou na tela de Cadastro do Aluno
-- **Quando** clica em Salvar
-- **Então** grava os dados editáveis na base
-####
-- **Dado** que estou na tela de Cadastro do Aluno
-- **Quando** clica em Cancelar
-- **Então** retorna para a tela de Consulta de Alunos
-- **E** não persiste a gravação dos dados
+# test coverage
+$ npm run test:cov
+```
 
-#### Cenário: Excluir cadastro de aluno
-- **Dado** que estou na listagem de alunos
-- **Quando** clico em Excluir aluno
-- **Então** exibe a modal de confirmação de exclusão
-####
-- **Dado** que estou na modal de confirmação de exclusão 
-- **Quando** clico em Confirmar
-- **Então** então exclui o registro do aluno
-####
-- **Dado** que estou na modal de confirmação de exclusão
-- **Quando** clico em Cancelar
-- **Então** então fecha a modal e não persiste a exclusão
+## Resources
 
-## Campos obrigatórios:
-- **Nome** (editável)
-- **Email** (editável)
-- **RA** (não editável) (chave única)
-- **CPF** (não editável)
+Check out a few resources that may come in handy when working with NestJS:
 
-# Critérios de avaliação
-- Qualidade de escrita do código
-- Organização do projeto
-- Qualidade da API
-- Lógica da solução implementada
-- Qualidade da camada de persistência
-- Utilização do Git (quantidade e descrição dos commits, Git Flow, ...)
-- Validações
-- Tratamento de erros
-- Padrões de projeto e arquitetura
+- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
+- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
+- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
+- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
+- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
+- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-# Desejável
-- Testes de unidade
-- Documentação da arquitetura de solução
+## Support
 
-# Diferenciais
-- Segurança da aplicação (autenticação, autorização, ...)
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-# Instruções de entrega
-1. Crie um fork do repositório no seu GitHub
-2. Faça o push do código desenvolvido no seu Github
-3. Inclua um arquivo chamado COMMENTS.md explicando
-    - Decisão da arquitetura utilizada
-    - Lista de bibliotecas de terceiros utilizadas
-    - O que você melhoraria se tivesse mais tempo
-    - Quais requisitos obrigatórios que não foram entregues
-4. Informe ao recrutador quando concluir o desafio junto com o link do repositório
-5. Após revisão do projeto junto com a equipe de desevolvimento deixe seu repositório privado
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
