@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, Length, Matches } from "@nestjs/class-validator";
+import { IsEmail, IsNotEmpty, IsNumberString, IsString, Length, Matches } from "@nestjs/class-validator";
 
 export class CreateStudentDto{
     @IsNotEmpty()
@@ -13,8 +13,8 @@ export class CreateStudentDto{
     email:string;
 
     @IsNotEmpty()
-    @IsString()
-    ra:string;
+    @IsNumberString()
+    ra:number;
 
     @IsNotEmpty()
     @IsString()

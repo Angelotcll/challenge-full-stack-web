@@ -1,10 +1,11 @@
+import { UUID } from "crypto";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Student{
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: UUID;
 
     @Column()
     name: string;
@@ -13,7 +14,7 @@ export class Student{
     email: string;
 
     @Column({unique: true})
-    ra: string;
+    ra: number;
 
     @Column()
     cpf: string;
