@@ -25,7 +25,7 @@ export class StudentService {
     }
   }
 
-  async findOneByRa(ra:number): Promise<Student> | null{
+  async findOneByRa(ra:string): Promise<Student> | null{
     return this.repository.findOne({
       where:{ra:ra}
     })

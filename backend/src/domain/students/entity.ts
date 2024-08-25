@@ -14,7 +14,7 @@ export class Student{
     email: string;
 
     @Column({unique: true})
-    ra: number;
+    ra: string;
 
     @Column()
     cpf: string;

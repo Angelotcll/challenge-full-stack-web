@@ -14,7 +14,7 @@ export class CreateStudentDto{
 
     @IsNotEmpty()
     @IsNumberString()
-    ra:number;
+    ra:string;
 
     @IsNotEmpty()
     @IsString()
