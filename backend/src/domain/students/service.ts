@@ -36,15 +36,17 @@ export class StudentService {
   }
 
   async findOne(id:UUID): Promise<Student> | null {
-    return this.repository.findOne({
+    const response = await this.repository.findOne({
       where:{id}
     });
+    console.log(response)
+  if(!response) throw new NotFoundException(`Aluno com ${id} não encontrado`)
+    return response
   }
 
   async update(id:UUID, updateStudentDto:UpdateStudentDto) {
     const student = await this.findOne(id)
     if(!student) throw new NotFoundException(`Aluno com o ${id} não encontrado`)  
-      const updateStudent = plainToInstance(Student, UpdateStudentDto)
     return this.repository.update(id, updateStudentDto)
   }
 
