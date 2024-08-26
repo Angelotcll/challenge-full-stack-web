@@ -21,7 +21,7 @@ export class StudentService {
     try{
      return this.repository.save(newStudent);
     }catch(e){
-      console.error(e) // tratar erros do typeorm
+      console.error(e)
     }
   }
 
@@ -43,10 +43,9 @@ export class StudentService {
 
   async update(id:UUID, updateStudentDto:UpdateStudentDto) {
     const student = await this.findOne(id)
-    if(!student) throw new NotFoundException(`Aluno com o ${id} não encontrado`)
-     
+    if(!student) throw new NotFoundException(`Aluno com o ${id} não encontrado`)  
       const updateStudent = plainToInstance(Student, UpdateStudentDto)
-    return this.repository.update(id, updateStudent)
+    return this.repository.update(id, updateStudentDto)
   }
 
   async remove(id: UUID):Promise<void>{

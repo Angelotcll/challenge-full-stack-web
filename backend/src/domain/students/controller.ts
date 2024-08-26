@@ -27,7 +27,7 @@ export class StudentController{
     }
 
     @Patch(':id')
-    update(@Param('id') id:UUID, @Body() updateStudentDto: UpdateStudentDto){
+    update(@Param('id') id:UUID, @Body() updateStudentDto: UpdateStudentDto) {
         return this.studentService.update(id, updateStudentDto)
     }
 

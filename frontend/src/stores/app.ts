@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia'
-import { StudentResponseDto } from '@/types/student'
+import { ResponseStudentDto } from '@/types/student'
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    studentData: null as StudentResponseDto | null
+    studentData: null as ResponseStudentDto | null
   }),
   actions: {
-    setStudentData(data: StudentResponseDto) {
+    setStudentData(data: ResponseStudentDto) {
       this.studentData = data
     },
     clearStudentData() {

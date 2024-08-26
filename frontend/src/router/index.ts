@@ -1,31 +1,32 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
+import { createRouter, createWebHistory } from 'vue-router'
 
-// Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
-import { setupLayouts } from 'virtual:generated-layouts'
-import { routes } from 'vue-router/auto-routes'
-
-const customRoutes = [
+const routes = [
   {
-    path: '/cadastrar',
-    name: 'Cadastrar',
-    component: () => import('@/pages/Cadastrar.vue'),
-  },
-  {
-    path: '/alunos',
-    name: 'Alunos',
-    component: () => import('@/pages/Alunos.vue')
-  },
+    path:'/',
+    component: () => import('@/layouts/MainLayout.vue'),
+    children:[
+      {
+        path: '',
+        name: 'Home',
+        component: () => import('@/pages/Home.vue')
+      },
+            {
+              path: 'consulta-de-alunos',
+              name: 'StudentList',
+              component: () => import('@/pages/StudentList.vue')
+            },
+            {
+              path: 'registro-de-alunos',
+              name: 'RegisterStudent',
+              component: () => import('@/pages/RegisterStudent.vue'),
+            }
+      ]
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
-  ...customRoutes
+  routes
 })
 
 router.onError((err, to) => {

@@ -1,5 +1,5 @@
 
-export interface StudentResponseDto {
+export interface ResponseStudentDto {
   id: string;
   name: string;
   email: string;
@@ -17,6 +17,4 @@ export interface CreateStudentDto {
 export interface UpdateStudentDto {
   name?: string;
   email?: string;
-  ra?: string;
-  cpf?: string;
 }
