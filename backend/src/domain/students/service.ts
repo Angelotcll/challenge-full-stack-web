@@ -1,5 +1,5 @@
 import { UpdateStudentDto } from './dto/update';
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import { ConflictException, HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Student } from './entity';
@@ -19,9 +19,10 @@ export class StudentService {
         
     const newStudent = plainToInstance(Student, createStudentDto)
     try{
-     return this.repository.save(newStudent);
+     const response = await this.repository.save(newStudent);
+     return response
     }catch(e){
-      console.error(e)
+      throw new HttpException('Erro ao criar o estudante.', HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
 
