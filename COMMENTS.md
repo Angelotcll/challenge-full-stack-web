@@ -19,5 +19,7 @@ Se houvesse mais tempo disponível, eu focaria em algumas áreas:
 
 2. **Implementação de Testes Unitários no Frontend**: Aumentaria a cobertura dos testes unitários para o frontend, garantindo que a aplicação seja mais robusta e que possíveis bugs sejam identificados mais cedo no processo de desenvolvimento.
 
+3. **Implementação do .env**: Adicionario o .env para salvar as variáveis de ambiente.
+
 3. **Implementação de segurança da aplicação**: Implementaria uma tela de login para acesso, elaboraria a autenticação com tokens JWT, proteção das rotas através das regras de permissão para acesso e a criptografia do banco de dados.
 
