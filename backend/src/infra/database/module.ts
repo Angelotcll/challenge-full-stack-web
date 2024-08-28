@@ -6,16 +6,16 @@ import { Student } from 'src/domain/students/entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host:'localhost',
       port: 5432,
       username: 'postgres',
       password: '1234',
       database: 'edtech',
       autoLoadEntities: true,
-      synchronize: true
+      synchronize: true,
     }),
-    TypeOrmModule.forFeature([Student])
+    TypeOrmModule.forFeature([Student]),
   ],
-  exports: [TypeOrmModule]
+  exports: [TypeOrmModule],
 })
 export class DatabaseModule {}

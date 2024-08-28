@@ -30,7 +30,6 @@ export default defineConfig({
     Vue({
       template: { transformAssetUrls },
     }),
-    // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
     Vuetify({
       autoImport: true,
       styles: {
@@ -57,5 +56,24 @@ export default defineConfig({
   },
   server: {
     port: 5000,
+  },
+  optimizeDeps: {
+    include: [
+      'vuetify/lib/components/VApp/index.mjs',
+      'vuetify/lib/components/VMain/index.mjs',
+      'vuetify/lib/components/VAppBar/index.mjs',
+      'vuetify/lib/components/VBtn/index.mjs',
+      'vuetify/lib/components/VCard/index.mjs',
+      'vuetify/lib/components/VDataTable/index.mjs',
+      'vuetify/lib/components/VDialog/index.mjs',
+      'vuetify/lib/components/VGrid/index.mjs',
+      'vuetify/lib/components/VIcon/index.mjs',
+      'vuetify/lib/components/VTextField/index.mjs',
+      'vuetify/lib/components/VToolbar/index.mjs',
+      'vuetify/lib/components/VList/index.mjs',
+      'vuetify/lib/components/VNavigationDrawer/index.mjs',
+      'vuetify/lib/components/VForm/index.mjs',
+      'vuetify/lib/components/VSnackbar/index.mjs'
+    ],
   },
 })

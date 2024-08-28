@@ -1,21 +1,20 @@
-import { UUID } from "crypto";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { UUID } from 'crypto';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Student{
+export class Student {
+  @PrimaryGeneratedColumn('uuid')
+  id: UUID;
 
-    @PrimaryGeneratedColumn('uuid')
-    id: UUID;
+  @Column()
+  name: string;
 
-    @Column()
-    name: string;
+  @Column()
+  email: string;
 
-    @Column()
-    email: string;
+  @Column({ unique: true })
+  ra: string;
 
-    @Column({unique: true})
-    ra: string;
-
-    @Column()
-    cpf: string;
+  @Column()
+  cpf: string;
 }

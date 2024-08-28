@@ -111,7 +111,9 @@ describe('StudentController', () => {
       // Assert
       expect(result).toEqual(studentList[0]);
       expect(service.findOne).toHaveBeenCalledTimes(1);
-      expect(service.findOne).toHaveBeenCalledWith('890094be-6c8f-45f1-8e57-1c25b6db99bf' as UUID);
+      expect(service.findOne).toHaveBeenCalledWith(
+        '890094be-6c8f-45f1-8e57-1c25b6db99bf' as UUID,
+      );
     });
   });
 
