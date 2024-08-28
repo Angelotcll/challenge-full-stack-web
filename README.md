@@ -47,13 +47,14 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 ## Execução
 
-Para iniciar o servidor de desenvolvimento, use o comando:
-
-```bash
-npm run start:dev
+    Para iniciar o servidor de desenvolvimento, use o comando:
+    
+    npm run start:dev
 
 
 ## Frontend
+
+Em um novo terminal
 
 1. **Navegue até a pasta do frontend**
 
